@@ -87,29 +87,26 @@
     </style>
 </head>
 <body>
-  
     <h1>What Lies Behind the QR Code?</h1>
     <p>Scan me for a secret message... Shhh, it's worth it</p>
     <div id="qrcode"></div>
-    <button id="generateButton" onclick="generateQRCode()">Generate QR Code</button>
-
+    <button id="generateButton">Generate QR Code</button>
     <div id="popupMessage"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script>
-    
         const qrData = JSON.stringify({
             putraa: "kyu nahi hoo rahi padhiii haaa....kyu?"
         });
 
-         function getRandomInt(min, max) {
+        function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
         function showPopupMessage() {
             const popupMessage = document.getElementById("popupMessage");
-            const randomScanCount = getRandomInt(100, 500);  
+            const randomScanCount = getRandomInt(100, 500);
             popupMessage.innerText = `Till now ${randomScanCount} users have scanned this QR code.`;
             popupMessage.style.display = "block";
 
@@ -122,12 +119,10 @@
             new QRCode(document.getElementById("qrcode"), qrData);
         }
 
-      
-        document.getElementById("qrcode").addEventListener("click", function () {
-            window.location.href = qrData.navigateTo;
+        document.getElementById("generateButton").addEventListener("click", function () {
+            generateQRCode();
+            showPopupMessage();
         });
-
-        window.onload = showPopupMessage;
     </script>
 </body>
 </html>
