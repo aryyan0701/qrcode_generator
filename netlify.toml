@@ -1,7 +1,6 @@
 [build]
-  command = "npm run build"  # Adjust based on your build script
-  publish = "public"         # Adjust based on your publish directory
-  functions = "netlify/functions"  # Adjust based on your functions directory
+  command = "npm run build" 
+  publish = "public"        
 
 [[redirects]]
   from = "/*"

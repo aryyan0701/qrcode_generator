@@ -5,6 +5,7 @@
   "main": "server.cjs",
   "scripts": {
     "start": "node server.cjs",
+    "build": "echo 'Build not required'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
